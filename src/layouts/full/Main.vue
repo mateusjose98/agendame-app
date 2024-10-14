@@ -25,8 +25,7 @@ const sDrawer = ref(true);
         <!---Navigation -->
         <!-- ---------------------------------------------- -->
         <div>
-        <perfect-scrollbar class="scrollnavbar">
-            <v-list class="pa-6">
+                  <v-list class="pa-6">
                 <!---Menu Loop -->
                 <template v-for="(item, i) in sidebarMenu">
                     <!---Item Sub Header -->
@@ -40,7 +39,7 @@ const sDrawer = ref(true);
             <div class="pa-4">
                 <ExtraBox />
             </div>
-        </perfect-scrollbar>
+       
     </div>
 
     </v-navigation-drawer>
