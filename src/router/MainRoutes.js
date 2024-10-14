@@ -11,7 +11,7 @@ const MainRoutes = {
             path: '/',
             component: () => import('@/views/dashboard/index.vue')
         },
-       
+
     ]
 };
 
