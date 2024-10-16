@@ -16,7 +16,7 @@ import LoginForm from '@/components/auth/LoginForm.vue';
                             <div class="text-body-1 text-muted text-center mb-3">Título</div>
                             <LoginForm />
                             <h6 class="text-h6 text-muted font-weight-medium d-flex justify-center align-center mt-3">
-                                New to Modernize?
+                                Novo por aqui?
                                 <RouterLink to="/cadastrar"
                                     class="text-primary text-decoration-none text-body-1 opacity-1 font-weight-medium pl-2">
                                     Criar uma conta</RouterLink>
