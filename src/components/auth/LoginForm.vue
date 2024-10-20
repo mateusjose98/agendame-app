@@ -48,7 +48,6 @@
 <script setup>
 
 import { ref } from 'vue';
-import axios from 'axios';
 import { object, string } from 'yup';
 import { useForm, useField, defineRule } from "vee-validate";
 import {useRouter} from 'vue-router';

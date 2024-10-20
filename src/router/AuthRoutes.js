@@ -2,9 +2,9 @@ export default [
     {
     path: '/login',
     component: () => import('@/layouts/blank/BlankLayout.vue'),
-    // meta: {
-    //     requiresAuth: false
-    // },
+    meta: {
+        requiresAuth: false
+    },
     children: [
         {
             name: 'login',
@@ -22,7 +22,7 @@ export default [
             component: () => import('@/views/auth/Register.vue')}
 
     ]
-   
+
 },
 ];
 

@@ -12,7 +12,7 @@ const MainRoutes = {
             component: () => import('@/views/dashboard/index.vue')
         },
 
-    ]
+    ],
 };
 
 export default MainRoutes;
