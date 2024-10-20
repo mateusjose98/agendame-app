@@ -7,9 +7,9 @@ export const useAuthStore = defineStore('auth', {
   }),
   actions: {
     login(username, password) {
-      return axios.post('json/jwt-auth/v1/token', {username, password}).then(response => {
-        console.log(response.data)
-        this.user = { 'email': response.data.user_email, 'name': response.data.user_display_name};
+      return axios.post('api/auth', {username, password}).then(response => {
+        console.log(response)
+        this.user = response.data;
       })
     }
   },

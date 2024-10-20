@@ -8,8 +8,19 @@ import pinia from "@/plugins/pinia"
 // Composables
 import { createApp } from "vue";
 import "@/scss/style.scss";
+import axios from "axios";
+
+
+
 const app = createApp(App);
-app.use(pinia)
-app.use(router);
-app.use(vuetify);
-app.mount("#app");
+
+
+axios.get("usuario/me").finally((response) => {
+  console.log(response)
+  app.use(pinia)
+  app.use(router);
+  app.use(vuetify);
+  app.mount("#app");
+});
+
+

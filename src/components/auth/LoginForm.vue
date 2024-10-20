@@ -65,8 +65,8 @@ const { handleSubmit, isSubmiting } = useForm({
         password: string().required().label('Senha'),
     }),
    initialValues: {
-      username: 'dog',
-      password: 'dog'
+      username: 'mateus',
+      password: '123'
    }
   });
 
