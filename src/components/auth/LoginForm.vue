@@ -72,7 +72,7 @@ const submit = handleSubmit(async (values) => {
 
 const login = async (values) => {
     try {
-      const response = await axios.post('https://dogsapi.origamid.dev/json/jwt-auth/v1/token', values)
+      const response = await axios.post('json/jwt-auth/v1/token', values)
       console.log(response)
       router.push({name: 'Dashboard'})
     } catch (error) {
