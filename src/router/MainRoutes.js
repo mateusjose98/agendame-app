@@ -1,7 +1,14 @@
+import { useAuthStore } from '@/stores/auth';
+
 const MainRoutes = {
     path: '/',
-    meta: {
-        requiresAuth: true
+    beforeEnter: (to, from, next) => {
+        const authStore = useAuthStore();
+        if (!authStore.isLoggedIn) {
+            next({ name: 'login' })
+        } else {
+            next()
+        }
     },
     redirect: '/',
     component: () => import('@/layouts/full/FullLayout.vue'),
