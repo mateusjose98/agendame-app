@@ -2,11 +2,11 @@ import { createVuetify } from 'vuetify';
 import '@mdi/font/css/materialdesignicons.css';
 import * as components from 'vuetify/components';
 import * as directives from 'vuetify/directives';
-import { PurpleTheme} from '@/theme/LightTheme';
-
+import { PurpleTheme } from '@/theme/LightTheme';
+import { VDateInput } from 'vuetify/labs/VDateInput'
 
 export default createVuetify({
-    components,
+    components: { VDateInput, ...components },
     directives,
 
     theme: {
@@ -16,6 +16,7 @@ export default createVuetify({
         }
     },
     defaults: {
+
         VBtn: {},
         VCard: {
             rounded: 'md'
