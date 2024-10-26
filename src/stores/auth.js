@@ -21,7 +21,7 @@ export const useAuthStore = defineStore('auth', {
     },
 
     checkToken() {
-      return axios.get("usuarios/me").then(response => {
+      return axios.get("usuario/me").then(response => {
         console.log(response)
         this.user = response.data.principal.username
         this.token = localStorage.getItem('token')
@@ -34,10 +34,11 @@ export const useAuthStore = defineStore('auth', {
     },
 
     clear() {
-      this.user = null;
-      this.token = null;
       localStorage.removeItem('token');
       localStorage.removeItem('user');
+      this.user = null;
+      this.token = null;
+
     },
   },
   getters: {
