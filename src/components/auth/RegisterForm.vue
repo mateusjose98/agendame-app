@@ -70,7 +70,7 @@ const submit = handleSubmit(async (values) => {
 })
 
 const register = async (values) => {
-  axios.post('/usuario', values)
+  axios.post('/usuarios', values)
     .then(response => {
       console.log(response.data)
     })

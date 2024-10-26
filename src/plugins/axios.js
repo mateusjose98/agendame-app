@@ -3,7 +3,7 @@ import axios from "axios";
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
 function isPublicRoute(config) {
-  const publicRoutes = ['api/auth', '/usuario'];
+  const publicRoutes = ['api/auth', '/usuarios'];
   return publicRoutes.includes(config.url) && config.method === 'post';
 }
 

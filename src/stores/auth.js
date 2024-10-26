@@ -21,7 +21,7 @@ export const useAuthStore = defineStore('auth', {
     },
 
     checkToken() {
-      return axios.get("usuario/me").then(response => {
+      return axios.get("usuarios/me").then(response => {
         console.log(response)
         this.user = response.data.principal.username
         this.token = localStorage.getItem('token')
