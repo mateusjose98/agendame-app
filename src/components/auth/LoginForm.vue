@@ -7,8 +7,8 @@
             <v-col cols="12">
                 <v-label class="font-weight-bold mb-1">E-mail</v-label>
                 <v-text-field
-                    v-model="username.value.value"
-                    :error-messages="username.errorMessage.value"
+                    v-model="email.value.value"
+                    :error-messages="email.errorMessage.value"
                     color="primary"
                     variant="outlined">
                 </v-text-field>
@@ -27,8 +27,8 @@
                 <div class="d-flex flex-wrap align-center ml-n2">
 
                     <div class="ml-sm-auto">
-                        <RouterLink class="text-primary text-decoration-none text-body-1 opacity-1 font-weight-medium"
-                            to="/">Esqueceu
+                        <RouterLink :to="{name: 'forgotPassword'}"
+                            class="text-primary text-decoration-none text-body-1 opacity-1 font-weight-medium" >Esqueceu
                             sua
                             senha?
                         </RouterLink>
@@ -60,16 +60,16 @@ const authStore = useAuthStore();
 
 const { handleSubmit, isSubmiting } = useForm({
     validationSchema: object({
-        username: string().required().label('E-mail'),
+        email: string().required().label('E-mail'),
         password: string().required().label('Senha'),
     }),
    initialValues: {
-      username: 'mateus',
+      email: 'josemateus.ufma@gmail.com',
       password: '123'
    }
   });
 
-const username = useField('username');
+const email = useField('email');
 const password = useField('password');
 
 const submit = handleSubmit(async (values) => {
@@ -78,7 +78,7 @@ const submit = handleSubmit(async (values) => {
 
 const login = async (values) => {
 
-      authStore.login(values.username, values.password)
+      authStore.login(values.email, values.password)
         .then(res => {
           router.push({name: 'Dashboard'})
         })

@@ -12,12 +12,6 @@
                 <v-text-field v-model="username.value.value"
                               :error-messages="username.errorMessage.value"  color="primary" hide-details variant="outlined"></v-text-field>
             </v-col>
-<!--            <v-col cols="12">-->
-<!--                <v-label class="font-weight-bold mb-1">Data de nascimento</v-label>-->
-<!--                <v-date-input v-model="dataNascimento"-->
-<!--                             label="" persistent-placeholder prepend-icon=""-->
-<!--                    variant="outlined"></v-date-input>-->
-<!--            </v-col>-->
             <v-col cols="12">
                 <v-label class="font-weight-bold mb-1">E-mail</v-label>
                 <v-text-field v-model="email.value.value"

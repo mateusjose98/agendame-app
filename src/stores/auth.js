@@ -9,10 +9,10 @@ export const useAuthStore = defineStore('auth', {
     token: null,
   }),
   actions: {
-    login(username, password) {
-      return axios.post('api/auth', { username, password }).then(response => {
+    login(email, password) {
+      return axios.post('api/auth', { email, password }).then(response => {
         console.log(response)
-        this.user = response.data.user.username;
+        this.user = response.data.user.email;
         this.token = response.data.token;
 
         localStorage.setItem('token', this.token);
@@ -40,6 +40,15 @@ export const useAuthStore = defineStore('auth', {
       this.token = null;
 
     },
+    verifyEmail(token) {
+      return axios.get(`usuarios/verify-email?tk=${token}`);
+    },
+    forgotPassword(values) {
+      return axios.post(`usuarios/forgot-password`, values);
+    },
+    resetPassword(values) {
+      return axios.post(`usuarios/change-password`, {novaSenha: values.password, token: values.token});
+    }
   },
   getters: {
     isLoggedIn: state => {
